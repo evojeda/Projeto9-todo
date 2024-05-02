@@ -1,6 +1,6 @@
 //  Declarando a variavel
 
-let tarefa=[];
+let tarefas=[];
 
 //Função que valida o preenchimento do campo caso esteja vazio
 
@@ -9,7 +9,7 @@ function validaCampo()
 {
     let valida = false;
     if(document.getElementById("task").value =="")
-    valida true
+    valida = true
     return valida;
 }
 
@@ -30,4 +30,21 @@ function adicionarTarefa(){
         listarTarefas();
     }
     document.getElementById("task").focus();
+}
+
+//Criando função listar tarefas
+
+function listarTarefas(){
+    let valor = "";
+    for(let i=0; i< tarefas.length; i++){
+        valor += tarefas[i] + "<br>";
+    }
+    document.getElementById("lista").innerHTML = valor;
+}
+
+//Função remover terefa
+function removerTarefa(){
+    //pop = metodo que remove a ultima linha adcionada
+    tarefas.pop();
+    listarTarefas();
 }
